@@ -1,19 +1,14 @@
 import React from 'react'
 
-function TodoList({currentTodos}){
-    console.log("from todolist: ", currentTodos)
-
+function TodoList({currentTodos, deleteTodo}){
     const todoList = currentTodos.map(item => {
         return (
             <li className="list-group-item text-light d-flex justify-content-between align-items-center" key={item.id}>
                 <span>{item.todo}</span>
-                <i className="fas fa-trash-alt"></i>
+                <i className="fas fa-trash-alt" onClick={deleteTodo}></i>
             </li>            
         )
     })
-
-    console.log("todo list items: ", todoList)
-
 
     return (
         <ul className="list-group todos mx-auto">

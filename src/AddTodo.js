@@ -1,9 +1,9 @@
 import React from 'react'
 import './style.css'
 
-function AddTodo(){
+function AddTodo({onAddTodo}){
     return (
-        <form className="add text-center">
+        <form className="add text-center" onSubmit={onAddTodo}>
             <label className="text-light my-3 mb-10">
                 Add todo...
             </label>
