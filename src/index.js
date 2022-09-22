@@ -1,15 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './style.css'
-import Header from './Header'
-import TodoList from './TodoList'
-import AddTodo from './AddTodo'
+import App from './App'
 
-ReactDOM.render(
-        <div className='container'>
-            <Header />
-            <TodoList />
-            <AddTodo />
-        </div>
-        , document.querySelector('body')
-    )
+
+ReactDOM.render(<App />, document.querySelector('body'))

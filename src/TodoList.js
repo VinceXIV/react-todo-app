@@ -1,20 +1,23 @@
 import React from 'react'
 
-function TodoList(){
+function TodoList({currentTodos}){
+    console.log("from todolist: ", currentTodos)
+
+    const todoList = currentTodos.map(item => {
+        return (
+            <li className="list-group-item text-light d-flex justify-content-between align-items-center" key={item.id}>
+                <span>{item.todo}</span>
+                <i className="fas fa-trash-alt"></i>
+            </li>            
+        )
+    })
+
+    console.log("todo list items: ", todoList)
+
+
     return (
         <ul className="list-group todos mx-auto">
-            <li className="list-group-item text-light d-flex justify-content-between align-items-center">
-                <span>Listen to Music</span>
-                <i className="fas fa-trash-alt"></i>
-            </li>
-            <li className="list-group-item text-light d-flex justify-content-between align-items-center">
-                <span>Drink coffee</span>
-                <i className="fas fa-trash-alt"></i>
-            </li>
-            <li class="list-group-item text-light d-flex justify-content-between align-items-center">
-                <span>Play Chess</span>
-                <i className="fas fa-trash-alt"></i>
-            </li>
+            {todoList}
         </ul>        
     )
 }
