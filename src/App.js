@@ -17,7 +17,6 @@ function App(){
 
     function createTodoObject(todoStr){
         setNewId(newId + 1)
-        console.log("current todos: ", todos)
         return {
             id: newId,
             todo: todoStr
@@ -39,8 +38,6 @@ function App(){
     }
 
     function deleteTodo(todoItem){
-        console.log("from delete todo: ", todoItem.target.parentElement)
-
         const value = todoItem.target.parentElement.textContent
         const newTodos = todos.filter(todoObject => {return todoObject.todo !== value})
         setTodos(newTodos)
